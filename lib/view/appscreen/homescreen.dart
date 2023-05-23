@@ -19,7 +19,6 @@ class Homescreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     int counter = ref.watch(counterProvider);
     return Scaffold(
-
       bottomNavigationBar: BottomNavigationBar(
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home,color: Colors.grey), label: 'home',)

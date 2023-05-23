@@ -64,7 +64,7 @@ class Settingscreen extends StatelessWidget {
                       items: LanguageCubit.cheakstate(context)
                           .langouges
                           .map(
-                              (s) => DropdownMenuItem(value: s, child: Text(s)))
+                              (s) => DropdownMenuItem(value: s, child: Text(s,style: TextStyle(fontWeight: FontWeight.bold),)))
                           .toList(),
                       onChanged: (value) {
                         LanguageCubit.cheakstate(context).langaugestate(value!);
