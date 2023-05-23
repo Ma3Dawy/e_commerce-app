@@ -23,11 +23,21 @@ class Validator {
   String? Function(String?)? namevalidate(BuildContext context) {
     return (value) {
       if (value!.isEmpty) {
-        return " enter yPleaseour name";
+        return " Enter your name please" ;
       }
       return null;
     };
   }
+
+  String? Function(String?)? countyvalidate(BuildContext context) {
+    return (value) {
+      if (value!.isEmpty) {
+        return " Enter your country please" ;
+      }
+      return null;
+    };
+  }
+
 
   String? Function(String?)? otpvalidator(BuildContext context) {
     return (value) {

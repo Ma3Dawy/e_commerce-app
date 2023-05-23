@@ -16,3 +16,10 @@ class Cheakbox extends _$Cheakbox {
     return false;
   }
 }
+@riverpod
+class Counter extends _$Counter {
+  @override
+  int build() {
+    return 0  ;
+  }
+}
