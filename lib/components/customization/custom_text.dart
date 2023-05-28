@@ -70,6 +70,7 @@ class Customtextfield extends StatelessWidget {
             textInputAction: TextInputAction.done,
             obscureText: obscure ?? false,
             decoration: InputDecoration(
+              
                 prefixIcon: Icon(icon2,color: Colors.deepPurple,),
                 errorStyle:const TextStyle(color: Colors.red,fontWeight: FontWeight.bold) ,
                 counterText: counterText,
@@ -78,6 +79,7 @@ class Customtextfield extends StatelessWidget {
                 hintText: "$hinttext",
                 labelText: "$labelText",
                 border: InputBorder.none,
+                focusedErrorBorder: InputBorder.none,
                 suffixIcon:
                 IconButton(onPressed: onTap, icon: Icon(suffixIcon))),
           ),

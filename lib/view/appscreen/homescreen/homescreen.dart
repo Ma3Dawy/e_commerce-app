@@ -6,7 +6,7 @@ import 'package:apptask/view/appscreen/wish_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'catagory_screen.dart';
+import '../catagory_screen.dart';
 
 // ignore: must_be_immutable
 class Homescreen extends ConsumerWidget {
@@ -37,11 +37,9 @@ class Homescreen extends ConsumerWidget {
       body: Padding(
         padding: const EdgeInsets.all(15.0),
         child: ListView(
+          scrollDirection: Axis.vertical,
           children: [
-            
-            screnn[counter]
-            
-            
+            screnn[counter]          
             ],
         ),
       ),

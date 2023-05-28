@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:apptask/controlar/navigator_helper.dart';
 import 'package:apptask/controlar/validator.dart';
 import 'package:apptask/models/login_model.dart';
-import 'package:apptask/view/appscreen/homescreen.dart';
+import 'package:apptask/view/appscreen/homescreen/homescreen.dart';
 import 'package:apptask/view/loginscreen/singup_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -92,16 +92,11 @@ class Logindata extends ConsumerWidget {
                       await SharedPreferences.getInstance();
                   String? userdata = sharedPreferences.getString("user");
                   newuser = Loginmodel.formMap(jsonDecode(userdata!));
-
-                  if (newuser!.email == email.text &&
-                      newuser!.password == password.text) {
-                    // ignore: use_build_context_synchronously
+                  if (newuser!.email == email.text &&newuser!.password == password.text) {
                     Navigatorhelper.navigatRepleace(context, Homescreen());
-                    // ignore: use_build_context_synchronously
                     ScaffoldMessenger.of(context).showSnackBar(
                         const SnackBar(content: Text("Login Sucsses")));
                   } else {
-                    // ignore: use_build_context_synchronously
                     ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                         content: Text("Username or Password is not correct")));
                   }

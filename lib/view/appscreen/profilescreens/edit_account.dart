@@ -2,7 +2,6 @@ import 'package:apptask/components/data/appdata/profiledata/edit_profile.dart';
 import 'package:flutter/material.dart';
 
 import '../../../components/data/appdata/profiledata/profile_screen_bar.dart';
-import '../../../controlar/cubit/thems_cubit/thems_cubit.dart';
 
 class Editaccount extends StatelessWidget {
   const Editaccount({super.key});

@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../controlar/cubit/color_cubit/color_cheakbox_cubit.dart';
+import '../../../controlar/cubit/color_cubit/color_cheakbox_cubit.dart';
 
 class Customproductdata {
   static gettext(

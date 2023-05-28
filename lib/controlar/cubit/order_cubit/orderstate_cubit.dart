@@ -4,20 +4,23 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'orderstate_state.dart';
 
 class OrderstateCubit extends Cubit<OrderstateState> {
-  OrderstateCubit() : super(Pendingstate());
+  OrderstateCubit() : super(Orderinitial());
 
   static OrderstateCubit cheakstate(context) => BlocProvider.of(context);
-  List<String> statuse = ["Pending", "Canceled", "Delivered"];
-  String pos = "Pending";
-  String orderstate(String value) {
-    if (value == "Pending") {
-      emit(Pendingstate());
-      pos = value;
-      return value;
-    } else {
-      emit(Changestate());
-      pos = value;
-      return value;
-    }
+  String pos1 = "";
+  String orderstate() {
+    emit(Pendingstate());
+    pos1 = "Pending";
+    return pos1;
+  }
+  String orderstate2() {
+    emit(Canseledstate());
+    pos1 = "Canseled";
+    return pos1;
+  }
+  String orderstate3() {
+    emit(Deliveredstate());
+    pos1 = "Delivered";
+    return pos1;
   }
 }

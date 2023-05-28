@@ -1,4 +1,4 @@
-import 'package:apptask/components/customization/product_detail.dart';
+import 'package:apptask/components/customization/product_details/product_detail.dart';
 import 'package:flutter/material.dart';
 
 class Product4 extends StatelessWidget {

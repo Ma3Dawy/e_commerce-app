@@ -1,11 +1,9 @@
 import 'package:apptask/controlar/cubit/language_cubit/cubit/language_cubit.dart';
 import 'package:apptask/controlar/cubit/order_cubit/orderstate_cubit.dart';
-import 'package:apptask/view/appscreen/homescreen.dart';
-import 'package:apptask/view/loginscreen/login_screen.dart';
-import 'package:apptask/view/loginscreen/splashscreen.dart';
+import 'package:apptask/view/appscreen/homescreen/homescreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
+import '../controlar/cubit/cart_cubut/cubit/cubit/cart_cubit.dart';
 import '../controlar/cubit/color_cubit/color_cheakbox_cubit.dart';
 import '../controlar/cubit/edit_profile_cubit/cubit/edit_cubit.dart';
 import '../controlar/cubit/switch_cubit/cubit/switch_cubit.dart';
@@ -33,6 +31,8 @@ class Myapp extends StatelessWidget {
           create: (context) => SwitchCubit(),
         ), BlocProvider(
           create: (context) => LanguageCubit(),
+        ), BlocProvider(
+          create: (context) => CartCubit(),
         ),
       ],
       child:  BlocBuilder<ThemsCubit, ThemsState>(
@@ -41,7 +41,7 @@ class Myapp extends StatelessWidget {
 
               theme: ThemsCubit.get(context).darkmood?ThemeData.dark():ThemeData.light(),
               debugShowCheckedModeBanner: false,
-              home:Splashscreen(),
+              home:Homescreen(),
             );
         },
       ),

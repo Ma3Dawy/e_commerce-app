@@ -46,7 +46,7 @@ class Editprofile extends StatelessWidget {
               hinttext: '',
               titel: "",
               maxline: 1,
-              validator: Validator().namevalidate(context)),
+              validator: Validator().namevalidate(context,"Enter your Name please")),
           Customtextfield(
               controlar: email,
               labelText: "Email",

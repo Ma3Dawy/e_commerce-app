@@ -5,4 +5,5 @@ abstract class OrderstateState {}
 
 class Orderinitial extends OrderstateState {}
 class Pendingstate extends OrderstateState {}
-class Changestate extends OrderstateState {}
+class Canseledstate extends OrderstateState {}
+class Deliveredstate extends OrderstateState {}

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../../../components/data/appdata/profiledata/profile_screen_bar.dart';
-import '../../../controlar/cubit/thems_cubit/thems_cubit.dart';
 
 class Cards extends StatelessWidget {
   const Cards({super.key});

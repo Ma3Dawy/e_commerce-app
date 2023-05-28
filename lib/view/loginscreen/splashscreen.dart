@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../components/customization/custom_background_image.dart';
-import '../appscreen/homescreen.dart';
+import '../appscreen/homescreen/homescreen.dart';
 
 class Splashscreen extends StatelessWidget {
   const Splashscreen({super.key});
@@ -14,9 +14,9 @@ class Splashscreen extends StatelessWidget {
     Future.delayed(
       const Duration(seconds: 3),
       () async {
-        final shared = await SharedPreferences.getInstance();
-        final user = shared.getString("user");
-        if (user!.isNotEmpty) {
+        SharedPreferences shared = await SharedPreferences.getInstance();
+        String? user = shared.getString("user");
+        if (user!=null) {
           // ignore: use_build_context_synchronously
           Navigatorhelper.navigatRepleace(context,  Homescreen());
       } else {

@@ -8,12 +8,12 @@ class CatagoryScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children:const [
-         Center(child: Text("Categories",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),)),
-         SizedBox(height: 20,),
-         Searchbar(searchtext: 'Search Categories'),
-         SizedBox(height: 20,),
-         SizedBox(child: CatagoryData()),
+      children: [
+         const Center(child: Text("Categories",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),)),
+         const SizedBox(height: 20,),
+         Searchbar.searchbar(context,'Search Categories'),
+         const SizedBox(height: 20,),
+         const SizedBox(child: CatagoryData()),
         
       ],
     );

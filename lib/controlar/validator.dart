@@ -20,10 +20,10 @@ class Validator {
     };
   }
 
-  String? Function(String?)? namevalidate(BuildContext context) {
+  String? Function(String?)? namevalidate(BuildContext context,String text) {
     return (value) {
       if (value!.isEmpty) {
-        return " Enter your name please" ;
+        return text ;
       }
       return null;
     };

@@ -1,8 +1,8 @@
-import 'package:apptask/components/customization/Custom.product.dart';
+import 'package:apptask/components/customization/product_details/Custom.product.dart';
 import 'package:flutter/material.dart';
 
-import 'cusrom_list.dart';
-import '../../controlar/navigator_helper.dart';
+import '../cusrom_list.dart';
+import '../../../controlar/navigator_helper.dart';
 
 class Productdetails {
   static productdetails(

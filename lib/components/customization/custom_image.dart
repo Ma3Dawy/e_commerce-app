@@ -1,26 +1,26 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:apptask/controlar/navigator_helper.dart';
-import 'package:apptask/view/appscreen/product_details/product1_details.dart';
-import 'package:apptask/view/appscreen/product_details/product2.details.dart';
-import 'package:apptask/view/appscreen/product_details/product3_details.dart';
-import 'package:apptask/view/appscreen/product_details/product4_details.dart';
-import 'package:apptask/view/appscreen/product_details/product5_detalis.dart';
+import 'package:apptask/view/appscreen/homescreen/product_details/product1_details.dart';
+import 'package:apptask/view/appscreen/homescreen/product_details/product2.details.dart';
+import 'package:apptask/view/appscreen/homescreen/product_details/product3_details.dart';
+import 'package:apptask/view/appscreen/homescreen/product_details/product4_details.dart';
+import 'package:apptask/view/appscreen/homescreen/product_details/product5_detalis.dart';
 import 'package:flutter/material.dart';
 
 class Customimage {
-  static imagecontainer(BuildContext context, String image, Widget child) {
+  static imagecontainer(BuildContext context, String image, String name) {
     return Container(
         padding: const EdgeInsets.all(8),
         margin: const EdgeInsets.all(8),
         width: 200,
         decoration: BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage(image),
-                fit: BoxFit.fill,
-                filterQuality: FilterQuality.high),
-            borderRadius: BorderRadius.circular(20),
+        image: DecorationImage(
+        image: AssetImage(image),
+        fit: BoxFit.fill,
+        filterQuality: FilterQuality.high),
+        borderRadius: BorderRadius.circular(15),
             color: Colors.grey),
-        child: child);
+        child: Text(name));
   }
 
   static customproduct(

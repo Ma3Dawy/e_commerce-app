@@ -28,7 +28,7 @@ class Singupdata extends ConsumerWidget {
             controlar: username,
             hinttext: 'Plaese enter your name',
             labelText: '',
-            validator: Validator().namevalidate(context),
+            validator: Validator().namevalidate(context,"Enter your Name please"),
             maxline: 1,
             titel: 'Name',
           ),
@@ -71,7 +71,7 @@ class Singupdata extends ConsumerWidget {
                       email: email.text,
                       password: password.text);
                   String data = user.fromMapToString(user.toMap());
-                  sharedPreferences.setString('user', data);
+                  sharedPreferences.setString("user", data);
                   print(data);
                   if (formkey.currentState!.validate() == true) {
                     // ignore: use_build_context_synchronously

@@ -17,7 +17,7 @@ class CatagoryData extends StatelessWidget {
             const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
         itemBuilder: (context, index) {
           return Customimage.imagecontainer(
-              context, images[index], Text(text[index]));
+              context, images[index], text[index]);
         },
       ),
     );
