@@ -1,3 +1,4 @@
+import 'package:apptask/view/appscreen/homescreen/notification.dart';
 import 'package:flutter/material.dart';
 import 'package:badges/badges.dart' as badges;
 
@@ -66,7 +67,10 @@ class Searchbar {
             Card(
                 shape: const CircleBorder(eccentricity: 1),
                 child: IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigatorhelper.navigatpush(
+                          context, const NotificationScreen());
+                    },
                     icon: const Icon(Icons.notifications_none,
                         color: Colors.deepPurple)))
           ],

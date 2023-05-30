@@ -29,8 +29,8 @@ class WishScreen extends StatelessWidget {
             itemCount: wishlist.length,
             itemBuilder: (context, index) => Boxdata.productbox(context,
                 title: wishlist[index]['title'],
-                subtitle: wishlist[index]['subtitle'],
-                photo: wishlist[index]['images'],
+                subtitle:Text( wishlist[index]['subtitle'],style: const TextStyle(color:Colors.deepPurple),),
+                leading:Image.asset(wishlist[index]['images']) ,
                 child: IconButton(
                 onPressed: () {},
                 icon: const Icon(Icons.shopping_cart_outlined,

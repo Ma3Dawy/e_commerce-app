@@ -1,6 +1,7 @@
 import 'package:apptask/controlar/cubit/language_cubit/cubit/language_cubit.dart';
 import 'package:apptask/controlar/cubit/order_cubit/orderstate_cubit.dart';
-import 'package:apptask/view/appscreen/homescreen/homescreen.dart';
+import 'package:apptask/view/loginscreen/login_screen.dart';
+import 'package:apptask/view/loginscreen/splashscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../controlar/cubit/cart_cubut/cubit/cubit/cart_cubit.dart';
@@ -41,7 +42,7 @@ class Myapp extends StatelessWidget {
 
               theme: ThemsCubit.get(context).darkmood?ThemeData.dark():ThemeData.light(),
               debugShowCheckedModeBanner: false,
-              home:Homescreen(),
+              home:const Splashscreen(),
             );
         },
       ),

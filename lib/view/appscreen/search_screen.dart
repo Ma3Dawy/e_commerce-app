@@ -45,8 +45,8 @@ class Searchscreen extends StatelessWidget {
             itemCount: search.length,
             itemBuilder: (context, index) => Boxdata.productbox(context,
                 title: search[index]['title'],
-                subtitle: search[index]['subtitle'],
-                photo: search[index]['images'],
+                subtitle:Text( search[index]['subtitle'],style: const TextStyle(color:Colors.deepPurple),),
+                leading:Image.asset(search[index]['images']) ,
                 child:  IconButton(
                 onPressed: () {},
                 icon: const Icon(Icons.shopping_cart_outlined,

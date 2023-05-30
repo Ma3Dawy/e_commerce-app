@@ -1,7 +1,6 @@
+// ignore: file_names
 import 'package:apptask/components/customization/cusrom_list.dart';
 import 'package:flutter/material.dart';
-
-import '../../controlar/cubit/cart_cubut/cubit/cubit/cart_cubit.dart';
 
 class Boxdata {
   static rowbardata(BuildContext context,
@@ -33,8 +32,8 @@ class Boxdata {
 
   static productbox(BuildContext context,
       {required String title,
-      required String subtitle,
-      required String photo,
+      required Widget subtitle,
+      required Widget leading,
       Widget? child,
       double? width,
       double? height}) {
@@ -45,28 +44,49 @@ class Boxdata {
         width: width,
         height: height,
         child: ListTile(
-          title: Text(title, style: const TextStyle(color: Colors.black)),
-          subtitle: Text(
-            "\n$subtitle\n",
-            style: const TextStyle(color: Colors.deepPurple),
-          ),
-          leading: Image(image: AssetImage(photo)),
+          title: Text(title, style: const TextStyle(color: Colors.black,fontWeight: FontWeight.bold)),
+          subtitle: subtitle,
+          leading: leading,
           trailing: child,
         ),
       ),
     );
   }
 
+  static notificationbox(BuildContext context,{required String title,required String subtitle,required String time,required IconData icons}) {
+    return Boxdata.productbox(context,
+        title:title,
+        subtitle: Column(crossAxisAlignment: CrossAxisAlignment.start,
+          children:  [
+            Text(
+                subtitle),
+            Text(
+             time,
+              style: const TextStyle(color: Colors.grey),
+            )
+          ],
+        ),
+        leading:  CircleAvatar(
+            backgroundColor: const Color.fromARGB(255, 246, 239, 239),
+            child: Icon(
+             icons,
+              color: Colors.deepPurple,
+            )));
+  }
+
   static databox(BuildContext context,
       {required int index,
-     required void Function() onTap,
-     required void Function() onTap2,
-     required String cubitnumber}) {
+      required void Function() onTap,
+      required void Function() onTap2,
+      required String cubitnumber}) {
     return Boxdata.productbox(context,
         height: 100,
         title: wishlist[index]['title'],
-        subtitle: wishlist[index]['subtitle'],
-        photo: wishlist[index]['images'],
+        subtitle: Text(
+          wishlist[index]['subtitle'],
+          style: const TextStyle(color: Colors.deepPurple),
+        ),
+        leading: Image.asset(wishlist[index]['images']),
         child: FittedBox(
             fit: BoxFit.fill,
             child:

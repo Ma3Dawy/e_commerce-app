@@ -3,7 +3,9 @@ import 'package:apptask/controlar/navigator_helper.dart';
 import 'package:apptask/view/appscreen/profilescreens/order_screen.dart';
 import 'package:apptask/view/appscreen/profilescreens/shipping_address.dart';
 import 'package:apptask/view/loginscreen/login_screen.dart';
+import 'package:apptask/view/loginscreen/splashscreen.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../../../view/appscreen/profilescreens/contact_us.dart';
 import '../../../../view/appscreen/profilescreens/edit_account.dart';
@@ -56,8 +58,10 @@ class Profiledata extends StatelessWidget {
                           if (name == 'Langouage Setting') {
                             Navigatorhelper.navigatpush(
                                 context, const LangouageSetting());
-                          }if (name == 'Shipping Address') {
-                            Navigatorhelper.navigatpush(context, const SippingAddress());
+                          }
+                          if (name == 'Shipping Address') {
+                            Navigatorhelper.navigatpush(
+                                context, const SippingAddress());
                           }
                           if (name == 'My Card') {
                             Navigatorhelper.navigatpush(context, const Cards());
@@ -70,8 +74,11 @@ class Profiledata extends StatelessWidget {
                             Navigatorhelper.navigatpush(context, ContactUs());
                           }
                           if (name == 'Log out') {
+                            SharedPreferences sharedPreferences =
+                                await SharedPreferences.getInstance();
+                            sharedPreferences.clear();
                             Navigatorhelper.navigatPushandRemovo(
-                                context, const Loginscreen());
+                                context, const Splashscreen());
                           }
                         },
                         style: const ButtonStyle(

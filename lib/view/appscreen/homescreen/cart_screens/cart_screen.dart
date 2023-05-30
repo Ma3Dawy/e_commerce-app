@@ -1,4 +1,3 @@
-import 'package:apptask/components/customization/cusrom_list.dart';
 import 'package:apptask/components/data/appdata/profiledata/profile_screen_bar.dart';
 import 'package:apptask/controlar/navigator_helper.dart';
 import 'package:apptask/view/appscreen/homescreen/cart_screens/cheak_out_screen.dart';

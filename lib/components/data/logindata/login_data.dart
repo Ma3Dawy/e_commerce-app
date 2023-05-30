@@ -1,8 +1,12 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'dart:convert';
 
+import 'package:apptask/controlar/dio_helper.dart';
 import 'package:apptask/controlar/navigator_helper.dart';
 import 'package:apptask/controlar/validator.dart';
 import 'package:apptask/models/login_model.dart';
+import 'package:apptask/models/user_model.dart';
 import 'package:apptask/view/appscreen/homescreen/homescreen.dart';
 import 'package:apptask/view/loginscreen/singup_screen.dart';
 import 'package:flutter/material.dart';
@@ -17,7 +21,6 @@ class Logindata extends ConsumerWidget {
   final email = TextEditingController();
   final password = TextEditingController();
   final formkey = GlobalKey<FormState>();
-  Loginmodel? newuser;
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final cheaker = ref.watch(cheakProvider);
@@ -90,15 +93,22 @@ class Logindata extends ConsumerWidget {
                 onPressed: () async {
                   SharedPreferences sharedPreferences =
                       await SharedPreferences.getInstance();
-                  String? userdata = sharedPreferences.getString("user");
-                  newuser = Loginmodel.formMap(jsonDecode(userdata!));
-                  if (newuser!.email == email.text &&newuser!.password == password.text) {
-                    Navigatorhelper.navigatRepleace(context, Homescreen());
-                    ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(content: Text("Login Sucsses")));
-                  } else {
+                  String? name = sharedPreferences.getString("user");
+                  if (name == null) {
                     ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-                        content: Text("Username or Password is not correct")));
+                        content: Text("Please Enter Your Data")));
+                  } else {
+                    Loginmodel? user = Loginmodel.formMap(jsonDecode(name));
+                    if (user.email == email.text &&
+                        user.password == password.text) {
+                      Navigatorhelper.navigatRepleace(context, Homescreen());
+                      ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(content: Text("Login Success")));
+                    } else {
+                      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                          content:
+                              Text("Username or Password is not correct")));
+                    }
                   }
                 },
                 style: const ButtonStyle(
